@@ -1,26 +1,24 @@
 #include "main.h"
 
 /**
- * print_number - print numbers chars
- * @n: integer params
- * Return: 0
+ * char *_strcpy - a function that copies the string pointed to by src
+ * @dest: copy to
+ * @src: copy from
+ * Return: string
  */
-
-void print_number(int n)
+char *_strcpy(char *dest, char *src)
 {
-	unsigned int n1;
+	int l = 0;
+	int x = 0;
 
-	n1 = n;
-
-	if (n < 0)
+	while (*(src + l) != '\0')
 	{
-		_putchar('-');
-		n1 = -n;
+		l++;
 	}
-
-	if (n1 / 10 != 0)
+	for ( ; x < l ; x++)
 	{
-		print_number(n1 / 10);
+		dest[x] = src[x];
 	}
-	_putchar((n1 % 10) + '0');
+	dest[l] = '\0';
+	return (dest);
 }
